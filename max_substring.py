@@ -1,24 +1,18 @@
-results= []
-
+import sys
+input= sys.stdin.readline
 for _ in range(int(input())):
-    n= int(input())
-    s= input()
+    n = int(input())
+    s = input()
+    a = s.count('1')
+    m = a * (n-a)
 
-    a= s.count('1')
-    b= n-a
-    m= a*b
-
-    c= s[0]
-    d= 1
-    for i in range(1, n):
-        if c == s[i]:
+    d = 1
+    for i in range(n - 1):
+        if s[i] == s[i + 1]:
             d += 1
         else:
-            m= max(m, d*d)
-            c= s[i]
-            d= 1
+            m = max(m, d*d)
+            d = 1
 
-    m= max(m, d*d)
-    results.append(m)
-
-print("\n".join(map(str, results)))
+    m = max(m, d*d)
+    print(m)
