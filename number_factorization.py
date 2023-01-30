@@ -21,7 +21,6 @@ for _ in range(int(input())):
 
     factor= 1
     prime= 0
-    p= set(a.values())
     while len(set(a.values())) >=1:
         if len(set(a.values())) == 1 and 0 in set(a.values()):
             break
