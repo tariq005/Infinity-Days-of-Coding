@@ -1,12 +1,11 @@
 from collections import Counter
 
 for _ in range(int(input())):
-    N = int(input())
-    arr = list(map(int, input().split()))
+    n= int(input())
+    a= list(map(int, input().split()))
     ans = 0
-    c = Counter(i.bit_length() for i in arr)
+    c= Counter(x.bit_length() for x in a)
 
     for k, v in c.items():
-        if (v > 1):
-            ans += (v * (v - 1) // 2)
+        ans += (v * (v - 1) // 2)
     print(ans)
